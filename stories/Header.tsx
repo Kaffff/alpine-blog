@@ -1,56 +1,30 @@
-import React from 'react';
+import React from "react";
+import Link from "next/link";
 
-import { Button } from './Button';
-import './header.css';
+export const Header = () => (
+  <header className="w-full bg-gray-900">
+    <div className="flex-col">
+      <p className="flex justify-center py-8 text-white text-3xl hover:cursor-pointer">
+        <Link href="/">b o t t a ヤマレポ</Link>
+      </p>
 
-type User = {
-  name: string;
-};
-
-interface HeaderProps {
-  user?: User;
-  onLogin: () => void;
-  onLogout: () => void;
-  onCreateAccount: () => void;
-}
-
-export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) => (
-  <header>
-    <div className="wrapper">
-      <div>
-        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-          <g fill="none" fillRule="evenodd">
-            <path
-              d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
-              fill="#FFF"
-            />
-            <path
-              d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
-              fill="#555AB9"
-            />
-            <path
-              d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
-              fill="#91BAF8"
-            />
-          </g>
-        </svg>
-        <h1>Acme</h1>
-      </div>
-      <div>
-        {user ? (
-          <>
-            <span className="welcome">
-              Welcome, <b>{user.name}</b>!
-            </span>
-            <Button size="small" onClick={onLogout} label="Log out" />
-          </>
-        ) : (
-          <>
-            <Button size="small" onClick={onLogin} label="Log in" />
-            <Button primary size="small" onClick={onCreateAccount} label="Sign up" />
-          </>
-        )}
-      </div>
+      <ul className="flex flex-nowrap justify-center border-y border-gray-700 text-gray-50 bg-gray-800">
+        <Link href="/">
+          <li className="w-44 text-center py-1  transition duration-500 hover:bg-emerald-500 hover:cursor-pointer">
+            Home
+          </li>
+        </Link>
+        <Link href="/history">
+          <li className="w-44 text-center py-1  transition duration-500 hover:bg-emerald-500 hover:cursor-pointer">
+            登山年表
+          </li>
+        </Link>
+        <Link href="/list">
+          <li className="w-44 text-center py-1  transition duration-500 hover:bg-emerald-500 hover:cursor-pointer">
+            山の一覧
+          </li>
+        </Link>
+      </ul>
     </div>
   </header>
 );

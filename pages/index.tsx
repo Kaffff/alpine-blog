@@ -3,10 +3,36 @@ import Head from "next/head";
 import Image from "next/image";
 import { createClient } from "microcms-js-sdk";
 import { Header } from "../stories/Header";
-import { Article } from "../stories/Article";
+import { ArticleCard } from "../stories/ArticleCard";
 import { Footer } from "../stories/Footer";
+import { ReactNode } from "react";
 
-const Home: NextPage = () => {
+export type Content = {
+  body: string;
+  createdAt: string;
+  date: string;
+  id: string;
+  mountain_name: string;
+  publishedAt: string;
+  revisedAt: string;
+  tag: string;
+  thumbnail: {
+    height: number;
+    url: string;
+    width: number;
+  };
+  title: string;
+  updatedAt: string;
+};
+
+export type ResFromMicroCMS = {
+  contents: Content[];
+  totalCount: number;
+  offset: number;
+  limit: number;
+};
+
+const Home: NextPage<ResFromMicroCMS> = (props) => {
   return (
     <div className="h-full flex flex-col min-h-screen font-shippori">
       <Head>
@@ -19,76 +45,15 @@ const Home: NextPage = () => {
           最新記事
         </div>
         <div className="grid tablet:grid-cols-2 grid-cols-3 gap-12 place-items-center">
-          <Article
-            thumbnail="/test_mountain.jpeg"
-            title="鋸山 頂上付近の駐車場から"
-            date="2019年12月31日"
-          />
-          <Article
-            thumbnail="/test_mountain.jpeg"
-            title="鋸山 頂上付近の駐車場から"
-            date="2019年12月31日"
-          />
-          <Article
-            thumbnail="/test_mountain.jpeg"
-            title="鋸山 頂上付近の駐車場から"
-            date="2019年12月31日"
-          />
-          <Article
-            thumbnail="/test_mountain.jpeg"
-            title="鋸山 頂上付近の駐車場から"
-            date="2019年12月31日"
-          />
-          <Article
-            thumbnail="/test_mountain.jpeg"
-            title="鋸山 頂上付近の駐車場から"
-            date="2019年12月31日"
-          />
-          <Article
-            thumbnail="/test_mountain.jpeg"
-            title="鋸山 頂上付近の駐車場から"
-            date="2019年12月31日"
-          />
-          <Article
-            thumbnail="/test_mountain.jpeg"
-            title="鋸山 頂上付近の駐車場から"
-            date="2019年12月31日"
-          />
-          <Article
-            thumbnail="/test_mountain.jpeg"
-            title="鋸山 頂上付近の駐車場から"
-            date="2019年12月31日"
-          />
-          <Article
-            thumbnail="/test_mountain.jpeg"
-            title="鋸山 頂上付近の駐車場から"
-            date="2019年12月31日"
-          />
-          <Article
-            thumbnail="/test_mountain.jpeg"
-            title="鋸山 頂上付近の駐車場から"
-            date="2019年12月31日"
-          />
-          <Article
-            thumbnail="/test_mountain.jpeg"
-            title="鋸山 頂上付近の駐車場から"
-            date="2019年12月31日"
-          />
-          <Article
-            thumbnail="/test_mountain.jpeg"
-            title="鋸山 頂上付近の駐車場から"
-            date="2019年12月31日"
-          />
-          <Article
-            thumbnail="/test_mountain.jpeg"
-            title="鋸山 頂上付近の駐車場から"
-            date="2019年12月31日"
-          />
-          <Article
-            thumbnail="/test_mountain.jpeg"
-            title="鋸山 頂上付近の駐車場から"
-            date="2019年12月31日"
-          />
+          {props.contents.map((content) => (
+            <ArticleCard
+              key={content.id}
+              id={content.id}
+              thumbnail={content.thumbnail.url}
+              title={content.title}
+              publishedAt={content.publishedAt}
+            />
+          ))}
         </div>
       </main>
 
@@ -97,16 +62,23 @@ const Home: NextPage = () => {
   );
 };
 
-// export async function getStaticProps() {
-//   const client = createClient({
-//     serviceDomain: process.env.NEXT_PUBLIC_MICROCMS_DOMAIN!,
-//     apiKey: process.env.NEXT_PUBLIC_MICROCMS_API_KEY!,
-//   });
-//   const data = await client.get({ endpoint: "blog" });
+export const client = createClient({
+  serviceDomain: process.env.NEXT_PUBLIC_MICROCMS_DOMAIN!,
+  apiKey: process.env.NEXT_PUBLIC_MICROCMS_API_KEY!,
+});
 
-//   return {
-//     props: data,
-//   };
-// }
+export async function getStaticProps() {
+  const data: ResFromMicroCMS = await client.get({
+    endpoint: "blog",
+    queries: {
+      fields: ["id", "title", "thumbnail", "publishedAt"],
+      limit: 100,
+      orders: "-publishedAt",
+    },
+  });
+  return {
+    props: data,
+  };
+}
 
 export default Home;

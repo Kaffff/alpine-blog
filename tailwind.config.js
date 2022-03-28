@@ -16,5 +16,5 @@ module.exports = {
       tablet: { max: "900px" },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

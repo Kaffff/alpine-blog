@@ -1,12 +1,12 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Article } from "./Article";
+import { ArticleCard } from "./ArticleCard";
 
 export default {
-  title: "Article",
-  component: Article,
-} as ComponentMeta<typeof Article>;
+  title: "ArticleCard",
+  component: ArticleCard,
+} as ComponentMeta<typeof ArticleCard>;
 
-export const Default: ComponentStory<typeof Article> = (args) => (
-  <Article {...args} />
+export const Default: ComponentStory<typeof ArticleCard> = (args) => (
+  <ArticleCard {...args} />
 );

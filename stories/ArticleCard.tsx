@@ -12,7 +12,7 @@ export const ArticleCard: React.FC<{
   const _date = new Date(date);
   return (
     <Link href={join("/", id)}>
-      <div className="w-full flex flex-col duration-300 hover:scale-105 hover:cursor-pointer ">
+      <div className="w-full flex flex-col duration-300 hover:scale-105 hover:cursor-pointer">
         <Image
           className="rounded-lg"
           src={thumbnail}

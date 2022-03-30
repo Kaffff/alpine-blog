@@ -51,7 +51,7 @@ const Home: NextPage<ResFromMicroCMS> = (props) => {
               id={content.id}
               thumbnail={content.thumbnail.url}
               title={content.title}
-              publishedAt={content.publishedAt}
+              date={content.date}
             />
           ))}
         </div>
@@ -71,9 +71,9 @@ export async function getStaticProps() {
   const data: ResFromMicroCMS = await client.get({
     endpoint: "blog",
     queries: {
-      fields: ["id", "title", "thumbnail", "publishedAt"],
+      fields: ["id", "title", "thumbnail", "date"],
       limit: 100,
-      orders: "-publishedAt",
+      orders: "-date",
     },
   });
   return {

@@ -7,9 +7,9 @@ export const ArticleCard: React.FC<{
   id: string;
   thumbnail: string;
   title: string;
-  publishedAt: string;
-}> = ({ id, thumbnail, title, publishedAt }) => {
-  const date = new Date(publishedAt);
+  date: string;
+}> = ({ id, thumbnail, title, date }) => {
+  const _date = new Date(date);
   return (
     <Link href={join("/", id)}>
       <div className="w-full flex flex-col duration-300 hover:scale-105 hover:cursor-pointer ">
@@ -22,9 +22,9 @@ export const ArticleCard: React.FC<{
           alt="picture of mountain"
         />
         <div className="text-white text-lg pt-2">{title}</div>
-        <div className="text-gray-400">{`${date.getFullYear()}年${
-          date.getMonth() + 1
-        }月${date.getDate()}日`}</div>
+        <div className="text-gray-400">{`${_date.getFullYear()}年${
+          _date.getMonth() + 1
+        }月${_date.getDate()}日`}</div>
       </div>
     </Link>
   );

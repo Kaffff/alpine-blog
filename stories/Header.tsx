@@ -9,13 +9,13 @@ export const Header = () => {
   return (
     <header className="w-full bg-gray-900">
       <div className="py-8 flex justify-between">
-        <div className="pl-8"></div>
+        <div className="pl-10"></div>
         <p className="text-white text-center  text-3xl hover:cursor-pointer">
           <Link href="/">b o t t a ヤマレポ</Link>
         </p>
         <div className="pr-3 self-center">
           <button
-            className="items-center outline-none"
+            className="flex items-center outline-none"
             onClick={() => setIsModalOpen(!isModalOpen)}
           >
             {isModalOpen ? (

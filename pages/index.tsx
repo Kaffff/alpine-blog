@@ -44,7 +44,7 @@ const Home: NextPage<ResFromMicroCMS> = (props) => {
         <div className="pb-12 text-4xl text-center text-white hover:cursor-default">
           最新記事
         </div>
-        <div className="grid grid-cols-3 gap-12 place-items-center tablet:grid-cols-2">
+        <div className="grid grid-cols-3 mobile:gap-6 gap-10 tablet:grid-cols-2">
           {props.contents.map((content) => (
             <ArticleCard
               key={content.id}

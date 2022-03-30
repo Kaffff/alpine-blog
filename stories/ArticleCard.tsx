@@ -16,12 +16,13 @@ export const ArticleCard: React.FC<{
         <Image
           className="rounded-lg"
           src={thumbnail}
-          width="200"
-          height="150"
+          width="809"
+          height="500"
+          layout="responsive"
           objectFit="cover"
           alt="picture of mountain"
         />
-        <div className="text-white text-lg pt-2">{title}</div>
+        <div className="text-white mobile:text-lg text-xl pt-2">{title}</div>
         <div className="text-gray-400">{`${_date.getFullYear()}年${
           _date.getMonth() + 1
         }月${_date.getDate()}日`}</div>

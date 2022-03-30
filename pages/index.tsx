@@ -36,7 +36,7 @@ const Home: NextPage<ResFromMicroCMS> = (props) => {
   return (
     <div className="flex flex-col h-full min-h-screen font-shippori">
       <Head>
-        <title>botta alpinist blog</title>
+        <title>botta ヤマレポ</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />

@@ -6,7 +6,7 @@ import { Header } from "../stories/Header";
 import { join } from "path";
 import Image from "next/image";
 
-const Tags: React.FC<{ tags: string }> = ({ tags }) => {
+export const Tags: React.FC<{ tags: string }> = ({ tags }) => {
   const taglist = tags.trimEnd().split(new RegExp(" |　"));
 
   return (
@@ -18,9 +18,9 @@ const Tags: React.FC<{ tags: string }> = ({ tags }) => {
   );
 };
 
-const Tag: React.FC<{ name: string }> = ({ name }) => {
+export const Tag: React.FC<{ name: string }> = ({ name }) => {
   return (
-    <button className="text-white text-sm inline-block border px-2 py-1 rounded-sm hover:border-emerald-200 hover:text-emerald-200 ">
+    <button className="inline-block py-1 px-2 text-sm text-white hover:text-emerald-200 rounded-sm border hover:border-emerald-200 ">
       # {name}
     </button>
   );
@@ -29,25 +29,25 @@ const Tag: React.FC<{ name: string }> = ({ name }) => {
 const Article: NextPage<Content> = (content) => {
   const date = new Date(content.date);
   return (
-    <div className="h-full flex flex-col min-h-screen font-shippori">
+    <div className="flex flex-col h-full min-h-screen font-shippori">
       <Header />
       <Image
-        className="opacity-80 duration-500 hover:scale-110 hover:opacity-100"
+        className="opacity-80 hover:opacity-100 duration-500 hover:scale-110"
         src={content.thumbnail.url}
         width="800"
         height="500"
         layout="responsive"
       ></Image>
-      <main className="flex-grow bg-gray-900 place-self-center max-w-7xl px-6 pb-32">
-        <div className=" text-white text-4xl text-center pt-10 pb-4">
+      <main className="grow place-self-center px-6 pb-32 max-w-7xl bg-gray-900">
+        <div className=" pt-10 pb-4 text-4xl text-center text-white">
           {content.title}
         </div>
-        <div className="pb-2 text-white text-sm text-center">{`${date.getFullYear()}年${
+        <div className="pb-2 text-sm text-center text-white">{`${date.getFullYear()}年${
           date.getMonth() + 1
         }月${date.getDate()}日`}</div>
         <Tags tags={content.tag} />
         <div
-          className="text-gray-100 pt-6 text-justify"
+          className="pt-6 text-justify text-gray-100"
           dangerouslySetInnerHTML={{ __html: content.body }}
         ></div>
       </main>

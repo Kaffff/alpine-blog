@@ -34,17 +34,17 @@ export type ResFromMicroCMS = {
 
 const Home: NextPage<ResFromMicroCMS> = (props) => {
   return (
-    <div className="h-full flex flex-col min-h-screen font-shippori">
+    <div className="flex flex-col h-full min-h-screen font-shippori">
       <Head>
         <title>botta alpinist blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className="flex-grow bg-gray-900 place-self-center max-w-7xl px-6 pt-14 pb-32">
-        <div className="text-white text-4xl pb-12 text-center hover:cursor-default">
+      <main className="grow place-self-center px-6 pt-14 pb-32 max-w-7xl bg-gray-900">
+        <div className="pb-12 text-4xl text-center text-white hover:cursor-default">
           最新記事
         </div>
-        <div className="grid tablet:grid-cols-2 grid-cols-3 gap-12 place-items-center">
+        <div className="grid grid-cols-3 gap-12 place-items-center tablet:grid-cols-2">
           {props.contents.map((content) => (
             <ArticleCard
               key={content.id}

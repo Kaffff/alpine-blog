@@ -22,7 +22,9 @@ export const ArticleCard: React.FC<{
           objectFit="cover"
           alt="picture of mountain"
         />
-        <div className="text-white mobile:text-lg text-xl pt-2">{title}</div>
+        <div className="text-white mobile:text-lg text-xl pt-2 text-justify">
+          {title}
+        </div>
         <div className="text-gray-400">{`${_date.getFullYear()}年${
           _date.getMonth() + 1
         }月${_date.getDate()}日`}</div>

@@ -40,7 +40,7 @@ const Article: NextPage<Content> = (content) => {
         objectFit="cover"
         alt="thumbnail"
       ></Image>
-      <main className="grow place-self-center px-6 pb-32 max-w-7xl bg-gray-900">
+      <main className="grow place-self-center mobile:px-4 px-6 pb-32 max-w-7xl bg-gray-900">
         <div className=" pt-10 pb-4 text-4xl text-center text-white">
           {content.title}
         </div>

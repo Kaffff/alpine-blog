@@ -40,11 +40,11 @@ const Home: NextPage<ResFromMicroCMS> = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className="grow place-self-center px-6 pt-14 pb-32 max-w-7xl bg-gray-900">
+      <main className="grow place-self-center mobile:px-4 px-6 pt-14 pb-32 max-w-7xl bg-gray-900">
         <div className="pb-12 text-4xl text-center text-white hover:cursor-default">
           最新記事
         </div>
-        <div className="grid grid-cols-3 mobile:gap-6 gap-10 tablet:grid-cols-2">
+        <div className="grid grid-cols-3 mobile:gap-4 gap-10 tablet:grid-cols-2">
           {props.contents.map((content) => (
             <ArticleCard
               key={content.id}

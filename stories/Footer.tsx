@@ -8,8 +8,8 @@ export const Footer = () => {
         <Image
           className="rounded-full"
           src="/test_mountain.jpeg"
-          width="70%"
-          height="70%"
+          width="70"
+          height="70"
           objectFit="cover"
           alt="picture of mountain"
         />

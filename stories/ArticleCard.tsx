@@ -14,18 +14,17 @@ export const ArticleCard: React.FC<{
     <Link href={join("/", id)}>
       <div className="w-full flex flex-col duration-300 hover:scale-105 hover:cursor-pointer">
         <Image
-          className="rounded-lg"
+          className="rounded"
           src={thumbnail}
-          width="809"
+          width="1000"
           height="500"
-          layout="responsive"
           objectFit="cover"
           alt="picture of mountain"
         />
-        <div className="text-white mobile:text-lg text-xl pt-2 text-justify">
+        <div className="text-white mobile:text-base text-xl pt-2 text-justify">
           {title}
         </div>
-        <div className="text-gray-400">{`${_date.getFullYear()}年${
+        <div className="text-gray-400 mobile:text-sm">{`${_date.getFullYear()}年${
           _date.getMonth() + 1
         }月${_date.getDate()}日`}</div>
       </div>

@@ -37,7 +37,7 @@ const Home: NextPage<ResFromMicroCMS> = (props) => {
     <div className="flex flex-col h-full min-h-screen font-shippori">
       <Header />
       <main className="grow place-self-center px-6 pt-14 pb-32 max-w-7xl bg-gray-900 mobile:px-4">
-        <div className="pb-12 text-4xl text-center text-white hover:cursor-default">
+        <div className="pb-12 text-4xl text-center text-white hover:cursor-default mobile:text-3xl">
           最新記事
         </div>
         <div className="grid grid-cols-3 gap-10 mobile:gap-4 tablet:grid-cols-2">

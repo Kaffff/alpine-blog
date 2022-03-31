@@ -18,6 +18,7 @@ export const ArticleCard: React.FC<{
           src={thumbnail}
           width="1000"
           height="500"
+          layout="responsive"
           objectFit="cover"
           alt="picture of mountain"
         />

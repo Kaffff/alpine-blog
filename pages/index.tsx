@@ -35,10 +35,6 @@ export type ResFromMicroCMS = {
 const Home: NextPage<ResFromMicroCMS> = (props) => {
   return (
     <div className="flex flex-col h-full min-h-screen font-shippori">
-      <Head>
-        <title>botta ヤマレポ</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Header />
       <main className="grow place-self-center px-6 pt-14 pb-32 max-w-7xl bg-gray-900 mobile:px-4">
         <div className="pb-12 text-4xl text-center text-white hover:cursor-default">

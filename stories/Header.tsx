@@ -14,7 +14,7 @@ export const Header = () => {
           <Link href="/">b o t t a ヤマレポ</Link>
         </p>
         <div className="pr-3 self-center">
-          <button
+          <div
             className="flex items-center outline-none"
             onClick={() => setIsModalOpen(!isModalOpen)}
           >
@@ -23,7 +23,7 @@ export const Header = () => {
             ) : (
               <SearchIcon className="text-gray-300" />
             )}
-          </button>
+          </div>
         </div>
       </div>
       {isModalOpen ? (

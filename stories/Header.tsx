@@ -51,9 +51,9 @@ export const Header = () => {
             登山年表
           </li>
         </Link>
-        <Link href="/list" passHref>
+        <Link href="/taglist" passHref>
           <li className="py-1 w-44 text-center  hover:bg-emerald-500 transition duration-500 hover:cursor-pointer">
-            山の一覧
+            タグ一覧
           </li>
         </Link>
       </ul>

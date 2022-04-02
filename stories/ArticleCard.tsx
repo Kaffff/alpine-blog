@@ -11,7 +11,7 @@ export const ArticleCard: React.FC<{
 }> = ({ id, thumbnail, title, date }) => {
   const _date = new Date(date);
   return (
-    <Link href={join("/", id)}>
+    <Link href={join("/", id)} passHref>
       <div className="w-full flex flex-col duration-300 hover:scale-105 hover:cursor-pointer">
         <Image
           className="rounded-xl"

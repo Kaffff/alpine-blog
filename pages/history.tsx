@@ -3,6 +3,8 @@ import React from "react";
 import { client, ResFromMicroCMS } from ".";
 import { Footer } from "../stories/Footer";
 import { Header } from "../stories/Header";
+import Link from "next/link";
+import { join } from "path";
 
 const History: NextPage<ResFromMicroCMS> = (props) => {
   return (
@@ -16,12 +18,11 @@ const History: NextPage<ResFromMicroCMS> = (props) => {
           {props.contents.map((content) => {
             const date = new Date(content.date);
             return (
-              <div
-                className="py-2"
-                key={content.id}
-              >{`・ ${date.getFullYear()}年${
-                date.getMonth() + 1
-              }月${date.getDate()}日 ${content.title}`}</div>
+              <Link key={content.id} href={join("/", content.id)} passHref>
+                <div className="py-2 hover:cursor-pointer hover:text-blue-400">{`・ ${date.getFullYear()}年${
+                  date.getMonth() + 1
+                }月${date.getDate()}日 ${content.title}`}</div>
+              </Link>
             );
           })}
         </div>

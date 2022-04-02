@@ -5,7 +5,6 @@ import { createClient } from "microcms-js-sdk";
 import { Header } from "../stories/Header";
 import { ArticleCard } from "../stories/ArticleCard";
 import { Footer } from "../stories/Footer";
-import { ReactNode } from "react";
 
 export type Content = {
   body: string;

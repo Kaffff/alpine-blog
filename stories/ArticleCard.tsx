@@ -16,7 +16,7 @@ export const ArticleCard: React.FC<{
         <Image
           className="rounded"
           src={thumbnail}
-          width="1000"
+          width="1207"
           height="500"
           layout="responsive"
           objectFit="cover"

@@ -30,6 +30,7 @@ const Article: NextPage<Content> = (content) => {
   const date = new Date(content.date);
   return (
     <div className="flex flex-col h-full min-h-screen font-shippori">
+      <meta name="description" content={content.title} />
       <Header />
       <Image
         className="opacity-80 hover:opacity-100 duration-500 hover:scale-110"

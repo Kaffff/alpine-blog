@@ -33,7 +33,7 @@ const Article: NextPage<Content> = (content) => {
       <Header />
       <Image
         className="opacity-80 hover:opacity-100 duration-500 hover:scale-110"
-        src={content.thumbnail.url}
+        src={`${content.thumbnail.url}?fit=crop&crop=edge&w=1000&h=500`}
         width="400"
         height="200"
         layout="responsive"

@@ -15,13 +15,12 @@ export const ArticleCard: React.FC<{
       <div className="flex flex-col w-full duration-300 hover:scale-105 hover:cursor-pointer">
         <Image
           className="rounded-xl"
-          src={thumbnail}
+          src={`${thumbnail}?fit=crop&crop=edge&w=302&h=125`}
           width="1207"
           height="500"
           layout="responsive"
           objectFit="cover"
           alt="picture of mountain"
-          quality={25}
           lazyBoundary="400px"
         />
         <div className="pt-2 text-lg text-center text-white mobile:text-sm">

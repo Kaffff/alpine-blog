@@ -42,7 +42,7 @@ const Article: NextPage<Content> = (content) => {
         alt="thumbnail"
         priority={true}
       ></Image>
-      <main className="grow place-self-center px-6 pb-32 max-w-7xl bg-gray-900 mobile:px-4">
+      <main className="grow place-self-center px-6 pb-32 max-w-3xl mobile:px-4">
         <div className=" pt-10 pb-4 text-4xl text-center text-white">
           {content.title}
         </div>

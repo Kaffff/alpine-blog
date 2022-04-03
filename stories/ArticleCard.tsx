@@ -22,6 +22,7 @@ export const ArticleCard: React.FC<{
           objectFit="cover"
           alt="picture of mountain"
           quality={25}
+          lazyBoundary="400px"
         />
         <div className="pt-2 text-lg text-center text-white mobile:text-sm">
           {title}

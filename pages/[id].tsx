@@ -33,12 +33,13 @@ const Article: NextPage<Content> = (content) => {
       <Header />
       <Image
         className="opacity-80 hover:opacity-100 duration-500 hover:scale-110"
-        src={`${content.thumbnail.url}?fit=crop&crop=edge&w=1000&h=500`}
+        src={content.thumbnail.url}
         width="400"
         height="200"
         layout="responsive"
         objectFit="cover"
         alt="thumbnail"
+        priority={true}
       ></Image>
       <main className="grow place-self-center px-6 pb-32 max-w-7xl bg-gray-900 mobile:px-4">
         <div className=" pt-10 pb-4 text-4xl text-center text-white">

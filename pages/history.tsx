@@ -1,12 +1,12 @@
 import { NextPage } from "next";
 import React from "react";
-import { client, ResFromMicroCMS } from ".";
+import { client, HomeContentsResponce } from ".";
 import { Footer } from "../stories/Footer";
 import { Header } from "../stories/Header";
 import Link from "next/link";
 import { join } from "path";
 
-const History: NextPage<ResFromMicroCMS> = (props) => {
+const History: NextPage<HomeContentsResponce> = (props) => {
   return (
     <div className="flex flex-col h-full min-h-screen font-shippori">
       <Header />
@@ -19,7 +19,7 @@ const History: NextPage<ResFromMicroCMS> = (props) => {
             const date = new Date(content.date);
             return (
               <Link key={content.id} href={join("/", content.id)} passHref>
-                <div className="py-2 hover:cursor-pointer hover:text-blue-400">{`・ ${date.getFullYear()}年${
+                <div className="py-2 hover:text-blue-400 hover:cursor-pointer">{`・ ${date.getFullYear()}年${
                   date.getMonth() + 1
                 }月${date.getDate()}日 ${content.title}`}</div>
               </Link>
@@ -33,7 +33,7 @@ const History: NextPage<ResFromMicroCMS> = (props) => {
 };
 
 export async function getStaticProps() {
-  const data: ResFromMicroCMS = await client.get({
+  const data: HomeContentsResponce = await client.get({
     endpoint: "blog",
     queries: {
       fields: ["id", "title", "thumbnail", "date"],

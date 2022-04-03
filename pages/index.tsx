@@ -1,6 +1,4 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
 import { createClient } from "microcms-js-sdk";
 import { Header } from "../stories/Header";
 import { ArticleCard } from "../stories/ArticleCard";
@@ -24,14 +22,25 @@ export type Content = {
   updatedAt: string;
 };
 
-export type ResFromMicroCMS = {
+export type HomeContent = {
+  date: string;
+  id: string;
+  thumbnail: {
+    height: number;
+    url: string;
+    width: number;
+  };
+  title: string;
+};
+
+export type HomeContentsResponce = {
   contents: Content[];
   totalCount: number;
   offset: number;
   limit: number;
 };
 
-const Home: NextPage<ResFromMicroCMS> = (props) => {
+const Home: NextPage<HomeContentsResponce> = (props) => {
   return (
     <div className="flex flex-col h-full min-h-screen font-shippori">
       <Header />
@@ -63,7 +72,7 @@ export const client = createClient({
 });
 
 export async function getStaticProps() {
-  const data: ResFromMicroCMS = await client.get({
+  const res: HomeContentsResponce = await client.get({
     endpoint: "blog",
     queries: {
       fields: ["id", "title", "thumbnail", "date"],
@@ -72,7 +81,7 @@ export async function getStaticProps() {
     },
   });
   return {
-    props: data,
+    props: res,
   };
 }
 

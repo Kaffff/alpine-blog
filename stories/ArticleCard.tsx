@@ -12,7 +12,7 @@ export const ArticleCard: React.FC<{
   const _date = new Date(date);
   return (
     <Link href={join("/", id)} passHref>
-      <div className="w-full flex flex-col duration-300 hover:scale-105 hover:cursor-pointer">
+      <div className="flex flex-col w-full duration-300 hover:scale-105 hover:cursor-pointer">
         <Image
           className="rounded-xl"
           src={thumbnail}
@@ -21,11 +21,12 @@ export const ArticleCard: React.FC<{
           layout="responsive"
           objectFit="cover"
           alt="picture of mountain"
+          quality={25}
         />
-        <div className="text-white text-center mobile:text-sm text-lg pt-2">
+        <div className="pt-2 text-lg text-center text-white mobile:text-sm">
           {title}
         </div>
-        <div className="text-gray-400 text-center mobile:text-xs">{`${_date.getFullYear()}年${
+        <div className="text-center text-gray-400 mobile:text-xs">{`${_date.getFullYear()}年${
           _date.getMonth() + 1
         }月${_date.getDate()}日`}</div>
       </div>

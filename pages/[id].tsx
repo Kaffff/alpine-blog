@@ -1,6 +1,6 @@
 import { GetStaticPropsContext, NextPage } from "next";
 import React from "react";
-import { client, Content, ResFromMicroCMS } from ".";
+import { client, Content, HomeContentsResponce } from ".";
 import { Footer } from "../stories/Footer";
 import { Header } from "../stories/Header";
 import { join } from "path";
@@ -59,7 +59,7 @@ const Article: NextPage<Content> = (content) => {
 };
 
 export async function getStaticPaths() {
-  const data: ResFromMicroCMS = await client.get({
+  const data: HomeContentsResponce = await client.get({
     endpoint: "blog",
     queries: {
       fields: ["id"],

@@ -3,6 +3,7 @@ import { createClient } from "microcms-js-sdk";
 import { Header } from "../stories/Header";
 import { ArticleCard } from "../stories/ArticleCard";
 import { Footer } from "../stories/Footer";
+import { useRouter } from "next/router";
 
 export type Content = {
   body: string;
@@ -41,15 +42,32 @@ export type HomeContentsResponce = {
 };
 
 const Home: NextPage<HomeContentsResponce> = (props) => {
+  const router = useRouter();
+  const { q } = router.query;
+  let contents = props.contents;
+  let title = "最新記事";
+  if (q && !Array.isArray(q)) {
+    contents = contents.filter((content) => {
+      title = "# " + q;
+      return content.title.concat(content.tag).includes(q);
+    });
+  } else if (Array.isArray(q)) {
+    q.map((_q) => {
+      contents = contents.filter((content) => {
+        return content.title.concat(content.tag).includes(_q);
+      });
+    });
+    title = "# " + q.join(" ");
+  }
   return (
     <div className="flex flex-col h-full min-h-screen font-shippori">
       <Header />
       <main className="grow place-self-center px-10 pt-14 pb-32 max-w-5xl bg-gray-900 mobile:px-6">
         <div className="pb-12 text-3xl text-center text-white hover:cursor-default mobile:text-2xl">
-          最新記事
+          {title}
         </div>
         <div className="grid grid-cols-3 gap-10  mobile:gap-6 tablet:grid-cols-2">
-          {props.contents.map((content) => (
+          {contents.map((content) => (
             <ArticleCard
               key={content.id}
               id={content.id}
@@ -75,7 +93,7 @@ export async function getStaticProps() {
   const res: HomeContentsResponce = await client.get({
     endpoint: "blog",
     queries: {
-      fields: ["id", "title", "thumbnail", "date"],
+      fields: ["id", "title", "thumbnail", "date", "tag"],
       limit: 100,
       orders: "-date",
     },

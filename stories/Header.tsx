@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Link from "next/link";
 import SearchIcon from "../public/search.svg";
 import CloseIcon from "../public/close.svg";
 import { Tags } from "../pages/[id]";
+import Router from "next/router";
 
 export const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
   return (
     <header className="w-full bg-gray-900">
       <div className="flex justify-between py-8">
@@ -31,6 +33,15 @@ export const Header = () => {
       {isModalOpen ? (
         <div className="flex flex-col justify-center py-6 px-12 bg-gray-800 border-t border-gray-700 duration-300">
           <input
+            autoFocus
+            ref={inputRef}
+            onKeyDown={(e) => {
+              if (e.keyCode == 13) {
+                const qs = inputRef.current?.value.split(" ");
+                const query = qs?.map((q) => `q=${q}`).join("&");
+                if (query) Router.push(`/?${query}`);
+              }
+            }}
             type="text"
             placeholder="記事検索"
             className="py-1 px-4 my-1 rounded-md focus:outline-none"

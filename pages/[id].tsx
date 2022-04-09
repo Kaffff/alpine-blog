@@ -5,6 +5,7 @@ import { Footer } from "../stories/Footer";
 import { Header } from "../stories/Header";
 import { join } from "path";
 import Image from "next/image";
+import Router from "next/router";
 
 export const Tags: React.FC<{ tags: string }> = ({ tags }) => {
   const taglist = tags.trimEnd().split(new RegExp(" |　"));
@@ -20,7 +21,12 @@ export const Tags: React.FC<{ tags: string }> = ({ tags }) => {
 
 export const Tag: React.FC<{ name: string }> = ({ name }) => {
   return (
-    <button className="inline-block py-1 px-2 text-sm text-white hover:text-emerald-200 rounded-sm border hover:border-emerald-200 ">
+    <button
+      onClick={() => {
+        Router.push(`/?q=${name}`);
+      }}
+      className="inline-block py-1 px-2 text-sm text-white hover:text-emerald-200 rounded-sm border hover:border-emerald-200 "
+    >
       # {name}
     </button>
   );

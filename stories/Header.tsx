@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import Link from "next/link";
 import SearchIcon from "../public/search.svg";
 import CloseIcon from "../public/close.svg";
+import MountainIcon from "../public/mountain.svg";
+
 import { Tags } from "../pages/[id]";
 import Router from "next/router";
 
@@ -11,13 +13,16 @@ export const Header = () => {
   return (
     <header className="w-full bg-gray-900">
       <div className="flex justify-between py-8">
-        <div className="pl-10"></div>
+        <div className="pl-16 mobile:pl-8"></div>
         <Link href="/" passHref>
-          <p className="text-3xl font-bold text-center   text-white hover:cursor-pointer">
-            b o t t a ヤマレポ
-          </p>
+          <div className="flex">
+            <MountainIcon />
+            <p className="pl-1 text-3xl font-bold text-center text-white   hover:cursor-pointer mobile:text-2xl">
+              b o t t a ヤマレポ
+            </p>
+          </div>
         </Link>
-        <div className="self-center pr-3">
+        <div className="flex pr-12 mobile:pr-3">
           <div
             className="flex items-center outline-none"
             onClick={() => setIsModalOpen(!isModalOpen)}

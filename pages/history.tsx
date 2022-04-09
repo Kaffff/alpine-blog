@@ -19,17 +19,21 @@ const History: NextPage<HomeContentsResponce> = (props) => {
             const date = new Date(content.date);
             return (
               <div key={content.id} className="flex  align-top">
-                <div className="pt-1 pr-3 w-1/2 text-lg font-bold text-right mobile:text-base">
+                <div className="pt-1 pr-3 w-1/3  text-lg font-bold text-right mobile:text-base">
                   {`${date.getFullYear()}/${
-                    date.getMonth() + 1
-                  }/${date.getDate()}`}
+                    date.getMonth() >= 9
+                      ? date.getMonth() + 1
+                      : "0" + (date.getMonth() + 1)
+                  }/${
+                    date.getDate() >= 9 ? date.getDate() : "0" + date.getDate()
+                  }`}
                 </div>
                 <div className="flex flex-col items-center">
                   <div className="my-2 w-4 h-4 bg-emerald-200 rounded-full border-2  border-gray-200"></div>
                   <div className="grow w-px  h-fit bg-gray-200"></div>
                 </div>
                 <Link href={join("/", content.id)} passHref>
-                  <div className="pt-1 pb-10 pl-3 w-1/2 text-lg  hover:text-blue-400  hover:cursor-pointer mobile:text-base">
+                  <div className="pt-1 pb-10 pl-3 w-2/3 text-lg  hover:text-blue-400  hover:cursor-pointer mobile:text-base">
                     {content.title}
                   </div>
                 </Link>

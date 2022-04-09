@@ -18,7 +18,7 @@ const TagList: NextPage<{
     <div className="flex flex-col h-full min-h-screen font-shippori">
       <Header />
       <main className="grow place-self-center px-6 pt-14 pb-32 max-w-5xl bg-gray-900">
-        <div className="pb-20 text-3xl text-center text-white hover:cursor-default mobile:text-2xl">
+        <div className="pb-12 text-3xl text-center text-white hover:cursor-default mobile:text-2xl">
           タグ一覧
         </div>
         {<Tags tags={tags} />}

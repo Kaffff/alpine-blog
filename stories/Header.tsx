@@ -37,7 +37,7 @@ export const Header = () => {
             ref={inputRef}
             onKeyDown={(e) => {
               if (e.keyCode == 13) {
-                const qs = inputRef.current?.value.split(" ");
+                const qs = inputRef.current?.value.split(new RegExp(" |　"));
                 const query = qs?.map((q) => `q=${q}`).join("&");
                 if (query) Router.push(`/?${query}`);
                 setIsModalOpen(false);

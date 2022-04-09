@@ -19,7 +19,7 @@ const History: NextPage<HomeContentsResponce> = (props) => {
             const date = new Date(content.date);
             return (
               <div key={content.id} className="flex  align-top">
-                <div className="pt-1 pr-3 w-1/2 text-lg font-bold text-right">
+                <div className="pt-1 pr-3 w-1/2 text-lg font-bold text-right mobile:text-base">
                   {`${date.getFullYear()}/${
                     date.getMonth() + 1
                   }/${date.getDate()}`}
@@ -29,7 +29,7 @@ const History: NextPage<HomeContentsResponce> = (props) => {
                   <div className="grow w-px  h-fit bg-gray-200"></div>
                 </div>
                 <Link href={join("/", content.id)} passHref>
-                  <div className="pt-1 pb-10 pl-3 w-1/2  text-lg  hover:text-blue-400 hover:cursor-pointer">
+                  <div className="pt-1 pb-10 pl-3 w-1/2 text-lg  hover:text-blue-400  hover:cursor-pointer mobile:text-base">
                     {content.title}
                   </div>
                 </Link>

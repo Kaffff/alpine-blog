@@ -12,7 +12,7 @@ const TagList: NextPage<{
   limit: number;
 }> = (props) => {
   let tags = "";
-  props.contents.map((content) => (tags += content.tag));
+  props.contents.map((content) => (tags = tags.concat(" ", content.tag)));
 
   return (
     <div className="flex flex-col h-full min-h-screen font-shippori">

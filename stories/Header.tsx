@@ -12,8 +12,8 @@ export const Header = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   return (
     <header className="w-full bg-gray-900">
-      <div className="flex justify-between py-8">
-        <div className="pl-16 mobile:pl-8"></div>
+      <div className="flex justify-around py-8">
+        <div></div>
         <Link href="/" passHref>
           <div className="flex">
             <MountainIcon />
@@ -22,7 +22,7 @@ export const Header = () => {
             </p>
           </div>
         </Link>
-        <div className="flex pr-12 mobile:pr-3">
+        <div className="flex">
           <div
             className="flex items-center outline-none"
             onClick={() => setIsModalOpen(!isModalOpen)}

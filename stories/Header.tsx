@@ -40,6 +40,7 @@ export const Header = () => {
                 const qs = inputRef.current?.value.split(" ");
                 const query = qs?.map((q) => `q=${q}`).join("&");
                 if (query) Router.push(`/?${query}`);
+                setIsModalOpen(false);
               }
             }}
             type="text"

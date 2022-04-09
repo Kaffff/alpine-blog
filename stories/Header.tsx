@@ -15,9 +15,9 @@ export const Header = () => {
       <div className="flex justify-around py-8">
         <div></div>
         <Link href="/" passHref>
-          <div className="flex">
+          <div className="flex place-items-center">
             <MountainIcon />
-            <p className="pl-1 text-3xl font-bold text-center text-white   hover:cursor-pointer mobile:text-2xl">
+            <p className="pl-4 text-3xl font-bold text-center text-white   hover:cursor-pointer mobile:text-2xl">
               b o t t a ヤマレポ
             </p>
           </div>

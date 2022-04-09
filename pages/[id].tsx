@@ -9,10 +9,22 @@ import Router from "next/router";
 
 export const Tags: React.FC<{ tags: string }> = ({ tags }) => {
   const taglist = tags.trimEnd().split(new RegExp(" |　"));
-
+  let tagMap = new Map<string, number>();
+  taglist.map((tag) => {
+    if (tag) {
+      if (tagMap.has(tag)) {
+        tagMap.set(tag, tagMap.get(tag)! + 1);
+      } else {
+        tagMap.set(tag, 1);
+      }
+    }
+  });
+  tagMap = new Map(
+    [...tagMap.entries()].sort((a, b) => (a[1] < b[1] ? 1 : -1))
+  );
   return (
     <div className=" flex flex-wrap gap-2 justify-center">
-      {Array.from(new Set(taglist)).map((name) => (
+      {[...tagMap.keys()].map((name) => (
         <Tag key={name} name={name} />
       ))}
     </div>

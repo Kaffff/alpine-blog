@@ -9,6 +9,10 @@ const Document = () => {
       <meta name="description" content="botta ヤマレポ" />
       <Head>
         <link rel="icon" href="/favicon.ico" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Shippori+Antique&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
       <body>
         <Main />

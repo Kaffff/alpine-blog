@@ -74,7 +74,6 @@ const Home: NextPage<HomeContentsResponce> = (props) => {
               thumbnail={content.thumbnail.url}
               title={content.title}
               date={content.date}
-              tag={content.tag}
             />
           ))}
         </div>

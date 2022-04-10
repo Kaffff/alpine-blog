@@ -17,9 +17,9 @@ export const Header = () => {
         <Link href="/" passHref>
           <div className="flex place-items-center">
             <MountainIcon />
-            <title className="pl-3 text-3xl font-bold text-center  text-white  hover:cursor-pointer mobile:text-2xl">
+            <p className="pl-3 text-3xl font-bold text-center  text-white  hover:cursor-pointer mobile:text-2xl">
               b o t t a ヤマレポ
-            </title>
+            </p>
           </div>
         </Link>
         <div className="flex">

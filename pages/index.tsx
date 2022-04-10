@@ -60,11 +60,14 @@ const Home: NextPage<HomeContentsResponce> = (props) => {
     title = "# " + q.join(" ");
   }
   return (
-    <div className="flex flex-col h-full min-h-screen font-shippori">
+    <div className="flex flex-col place-items-center h-full min-h-screen font-shippori">
       <Header />
-      <main className="grow place-self-center px-10 pt-14 pb-24 max-w-5xl  mobile:px-6">
-        <div className="pb-12 text-3xl text-center  hover:cursor-default mobile:text-2xl">
+      <main className="grow px-10 pt-10 pb-24 max-w-5xl  mobile:px-6">
+        <div className="pb-2 ml-1 text-3xl  hover:cursor-default mobile:text-2xl">
           {title}
+        </div>
+        <div className="mb-8 w-full h-1 bg-slate-200">
+          <div className="w-32 h-1 bg-emerald-200 mobile:w-28 "></div>
         </div>
         <div className="grid grid-cols-2 gap-10  mobile:gap-6 tablet:grid-cols-1">
           {contents.map((content) => (

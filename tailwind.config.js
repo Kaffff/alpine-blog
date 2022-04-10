@@ -10,6 +10,9 @@ module.exports = {
       fontFamily: {
         shippori: ["ShipporiAntique"],
       },
+      skew: {
+        60: "60deg",
+      },
     },
     screens: {
       mobile: { max: "650px" },

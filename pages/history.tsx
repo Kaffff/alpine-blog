@@ -10,16 +10,19 @@ const History: NextPage<HomeContentsResponce> = (props) => {
   return (
     <div className="flex flex-col h-full min-h-screen font-shippori">
       <Header />
-      <main className="grow place-self-center px-10 pt-14 pb-32 max-w-7xl mobile:px-6">
-        <div className="pb-12 text-3xl text-center  hover:cursor-default mobile:text-2xl">
+      <main className="grow place-self-center px-10 pt-10 pb-32 max-w-7xl mobile:px-6">
+        <div className="pb-2 ml-1 text-3xl  hover:cursor-default mobile:text-2xl">
           登山年表
+        </div>
+        <div className="mb-8 w-full h-1 bg-slate-200">
+          <div className="w-32 h-1 bg-emerald-200 mobile:w-28 "></div>
         </div>
         <div className="">
           {props.contents.map((content) => {
             const date = new Date(content.date);
             return (
               <div key={content.id} className="flex  align-top">
-                <div className="pt-1 pr-3 w-1/3  text-lg font-bold text-right mobile:text-base">
+                <div className="pt-1 pr-3   text-lg font-bold text-right mobile:text-base">
                   {`${date.getFullYear()}/${
                     date.getMonth() >= 9
                       ? date.getMonth() + 1
@@ -33,7 +36,7 @@ const History: NextPage<HomeContentsResponce> = (props) => {
                   <div className="grow w-px  h-fit bg-zinc-200"></div>
                 </div>
                 <Link href={join("/", content.id)} passHref>
-                  <div className="pt-1 pb-10 pl-3 w-2/3 text-lg  hover:text-blue-400  hover:cursor-pointer mobile:text-base">
+                  <div className="pt-1 pb-10 pl-3  text-lg  hover:text-blue-400  hover:cursor-pointer mobile:text-base">
                     {content.title}
                   </div>
                 </Link>

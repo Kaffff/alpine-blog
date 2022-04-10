@@ -33,7 +33,7 @@ const History: NextPage<HomeContentsResponce> = (props) => {
                 </div>
                 <div className="flex flex-col items-center">
                   <div className="my-2 w-4 h-4 bg-emerald-200 rounded-full border-2  border-zinc-200"></div>
-                  <div className="grow w-px  h-fit bg-zinc-200"></div>
+                  <div className="grow w-px bg-zinc-400"></div>
                 </div>
                 <Link href={join("/", content.id)} passHref>
                   <div className="pt-1 pb-10 pl-3  text-lg  hover:text-blue-400  hover:cursor-pointer mobile:text-base">

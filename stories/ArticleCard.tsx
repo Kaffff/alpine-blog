@@ -23,7 +23,6 @@ export const ArticleCard: React.FC<{
               layout="responsive"
               objectFit="cover"
               alt="picture of mountain"
-              loading="lazy"
               lazyBoundary="300px"
               priority={true}
             />

@@ -62,11 +62,11 @@ const Home: NextPage<HomeContentsResponce> = (props) => {
   return (
     <div className="flex flex-col h-full min-h-screen font-shippori">
       <Header />
-      <main className="grow place-self-center px-10 pt-14 pb-32 max-w-5xl bg-gray-900 mobile:px-6">
+      <main className="grow place-self-center px-10 pt-14 pb-32 max-w-6xl bg-gray-900 mobile:px-6">
         <div className="pb-12 text-3xl text-center text-white hover:cursor-default mobile:text-2xl">
           {title}
         </div>
-        <div className="grid grid-cols-3 gap-10  mobile:gap-6 tablet:grid-cols-2">
+        <div className="grid grid-cols-2 gap-10  mobile:gap-6 tablet:grid-cols-1">
           {contents.map((content) => (
             <ArticleCard
               key={content.id}

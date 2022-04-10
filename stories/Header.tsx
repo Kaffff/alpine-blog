@@ -50,7 +50,7 @@ export const Header = () => {
             }}
             type="text"
             placeholder="記事検索"
-            className="py-1 px-4 my-1 rounded-md focus:outline-none"
+            className="py-1 px-4 my-1 text-black rounded-md focus:outline-none"
           />
           <Tags tags="秩父 飯能 南アルプス 北アルプス" />
         </div>

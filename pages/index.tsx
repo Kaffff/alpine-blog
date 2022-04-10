@@ -45,7 +45,7 @@ const Home: NextPage<HomeContentsResponce> = (props) => {
   const router = useRouter();
   const { q } = router.query;
   let contents = props.contents;
-  let title = "最新記事";
+  let title = "記事一覧";
   if (q && !Array.isArray(q)) {
     contents = contents.filter((content) => {
       title = "# " + q;

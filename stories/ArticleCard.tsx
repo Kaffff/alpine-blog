@@ -13,7 +13,7 @@ export const ArticleCard: React.FC<{
   return (
     <Link href={join("/", id)} passHref>
       <div className="flex flex-row w-full duration-300 hover:scale-105 hover:cursor-pointer">
-        <div className="pr-2 w-1/2">
+        <div className="pr-2 w-2/5">
           <Image
             className="rounded"
             src={`${thumbnail}?fit=crop&crop=edge&w=302&h=125`}
@@ -26,7 +26,7 @@ export const ArticleCard: React.FC<{
             priority={true}
           />
         </div>
-        <div className="w-1/2">
+        <div className="w-3/5">
           <div className="pl-2 text-lg font-bold  mobile:text-sm">{title}</div>
           <div className="pt-1 pl-2 text-zinc-400 mobile:text-xs">{`${_date.getFullYear()}年${
             _date.getMonth() + 1

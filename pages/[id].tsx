@@ -61,7 +61,9 @@ const Article: NextPage<Content> = (content) => {
         priority={true}
       ></Image>
       <main className="grow place-self-center px-6 pb-32 max-w-3xl mobile:px-4">
-        <div className=" pt-10 pb-4 text-4xl text-center ">{content.title}</div>
+        <div className=" pt-10 pb-4 text-3xl text-center mobile:text-2xl ">
+          {content.title}
+        </div>
         <div className="pb-2 text-sm text-center ">{`${date.getFullYear()}年${
           date.getMonth() + 1
         }月${date.getDate()}日`}</div>

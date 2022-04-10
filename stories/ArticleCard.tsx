@@ -2,13 +2,15 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { join } from "path";
+import { Tags } from "../pages/[id]";
 
 export const ArticleCard: React.FC<{
   id: string;
   thumbnail: string;
   title: string;
   date: string;
-}> = ({ id, thumbnail, title, date }) => {
+  tag: string;
+}> = ({ id, thumbnail, title, date, tag }) => {
   const _date = new Date(date);
   return (
     <Link href={join("/", id)} passHref>
@@ -30,9 +32,12 @@ export const ArticleCard: React.FC<{
           <div className="pl-2 text-xl font-bold  mobile:text-base">
             {title}
           </div>
-          <div className="pt-1 pl-2 text-zinc-400 mobile:text-xs">{`${_date.getFullYear()}年${
+          <div className="pt-1 pl-2 text-zinc-400 mobile:text-sm">{`${_date.getFullYear()}年${
             _date.getMonth() + 1
           }月${_date.getDate()}日`}</div>
+          <div className="pl-2 text-zinc-400 mobile:text-xs">
+            {tag.trimEnd().split(new RegExp(" |　")).slice(0, 4).join(" ")}
+          </div>
         </div>
       </div>
     </Link>

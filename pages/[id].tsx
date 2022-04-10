@@ -37,7 +37,7 @@ export const Tag: React.FC<{ name: string }> = ({ name }) => {
       onClick={() => {
         Router.push(`/?q=${name}`);
       }}
-      className="inline-block py-1 px-2 text-sm text-white hover:text-emerald-200 rounded-sm border hover:border-emerald-200 "
+      className="inline-block py-1 px-2 text-sm  hover:text-emerald-200 rounded-sm border hover:border-emerald-200 "
     >
       # {name}
     </button>
@@ -61,15 +61,13 @@ const Article: NextPage<Content> = (content) => {
         priority={true}
       ></Image>
       <main className="grow place-self-center px-6 pb-32 max-w-3xl mobile:px-4">
-        <div className=" pt-10 pb-4 text-4xl text-center text-white">
-          {content.title}
-        </div>
-        <div className="pb-2 text-sm text-center text-white">{`${date.getFullYear()}年${
+        <div className=" pt-10 pb-4 text-4xl text-center ">{content.title}</div>
+        <div className="pb-2 text-sm text-center ">{`${date.getFullYear()}年${
           date.getMonth() + 1
         }月${date.getDate()}日`}</div>
         <Tags tags={content.tag} />
         <div
-          className="pt-6 text-justify text-gray-100"
+          className="pt-6 text-justify text-zinc-100"
           dangerouslySetInnerHTML={{ __html: content.body }}
         ></div>
       </main>

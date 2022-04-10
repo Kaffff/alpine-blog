@@ -10,11 +10,11 @@ const History: NextPage<HomeContentsResponce> = (props) => {
   return (
     <div className="flex flex-col h-full min-h-screen font-shippori">
       <Header />
-      <main className="grow place-self-center px-10 pt-14 pb-32 max-w-7xl bg-gray-900 mobile:px-6">
-        <div className="pb-12 text-3xl text-center text-white hover:cursor-default mobile:text-2xl">
+      <main className="grow place-self-center px-10 pt-14 pb-32 max-w-7xl mobile:px-6">
+        <div className="pb-12 text-3xl text-center  hover:cursor-default mobile:text-2xl">
           登山年表
         </div>
-        <div className="text-white">
+        <div className="">
           {props.contents.map((content) => {
             const date = new Date(content.date);
             return (
@@ -29,8 +29,8 @@ const History: NextPage<HomeContentsResponce> = (props) => {
                   }`}
                 </div>
                 <div className="flex flex-col items-center">
-                  <div className="my-2 w-4 h-4 bg-emerald-200 rounded-full border-2  border-gray-200"></div>
-                  <div className="grow w-px  h-fit bg-gray-200"></div>
+                  <div className="my-2 w-4 h-4 bg-emerald-200 rounded-full border-2  border-zinc-200"></div>
+                  <div className="grow w-px  h-fit bg-zinc-200"></div>
                 </div>
                 <Link href={join("/", content.id)} passHref>
                   <div className="pt-1 pb-10 pl-3 w-2/3 text-lg  hover:text-blue-400  hover:cursor-pointer mobile:text-base">

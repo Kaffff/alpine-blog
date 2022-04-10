@@ -27,10 +27,8 @@ export const ArticleCard: React.FC<{
           />
         </div>
         <div className="w-1/2">
-          <div className="pt-2 pl-2 text-lg  text-white mobile:text-sm">
-            {title}
-          </div>
-          <div className="pl-2 text-gray-400 mobile:text-xs">{`${_date.getFullYear()}年${
+          <div className="pt-2 pl-2 text-lg   mobile:text-sm">{title}</div>
+          <div className="pl-2 text-zinc-400 mobile:text-xs">{`${_date.getFullYear()}年${
             _date.getMonth() + 1
           }月${_date.getDate()}日`}</div>
         </div>

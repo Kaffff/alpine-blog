@@ -11,13 +11,13 @@ export const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   return (
-    <header className="w-full bg-gray-900">
+    <header className="w-full ">
       <div className="flex justify-around py-8">
         <div></div>
         <Link href="/" passHref>
           <div className="flex place-items-center">
             <MountainIcon />
-            <p className="pl-4 text-3xl font-bold text-center text-white   hover:cursor-pointer mobile:text-2xl">
+            <p className="pl-4 text-3xl font-bold text-center  text-white  hover:cursor-pointer mobile:text-2xl">
               b o t t a ヤマレポ
             </p>
           </div>
@@ -28,15 +28,15 @@ export const Header = () => {
             onClick={() => setIsModalOpen(!isModalOpen)}
           >
             {isModalOpen ? (
-              <CloseIcon className="text-gray-300" />
+              <CloseIcon className="text-zinc-300" />
             ) : (
-              <SearchIcon className="text-gray-300" />
+              <SearchIcon className="text-zinc-300" />
             )}
           </div>
         </div>
       </div>
       {isModalOpen ? (
-        <div className="flex flex-col justify-center py-6 px-12 bg-gray-800 border-t border-gray-700 duration-300">
+        <div className="flex flex-col justify-center py-6 px-12 bg-zinc-800 border-t border-zinc-700 duration-300">
           <input
             autoFocus
             ref={inputRef}
@@ -55,9 +55,9 @@ export const Header = () => {
           <Tags tags="秩父 飯能 南アルプス 北アルプス" />
         </div>
       ) : (
-        <div className="px-12 border-gray-700"></div>
+        <div className="px-12 border-zinc-700"></div>
       )}
-      <ul className="flex flex-nowrap justify-center text-gray-50 bg-gray-800 border-y border-gray-700">
+      <ul className="flex flex-nowrap justify-center text-zinc-50 bg-zinc-800 border-y border-zinc-700">
         <Link href="/" passHref>
           <li className="py-1 w-44 text-center  hover:bg-emerald-500 transition duration-500 ease-out delay-75 hover:cursor-pointer">
             Home

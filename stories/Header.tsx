@@ -17,7 +17,7 @@ export const Header = () => {
         <Link href="/" passHref>
           <div className="flex place-items-center">
             <MountainIcon />
-            <p className="pl-3 font-newTegomin text-3xl text-center  text-white  hover:cursor-pointer mobile:text-2xl">
+            <p className="pb-1 pl-3 font-newTegomin text-3xl text-center  text-white  hover:cursor-pointer mobile:pb-0 mobile:text-2xl">
               b o t t a ヤマレポ
             </p>
           </div>

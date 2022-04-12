@@ -10,11 +10,11 @@ const Document = () => {
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <link
-          href="https://fonts.googleapis.com/css2?family=New+Tegomin&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=New+Tegomin&family=Shippori+Antique&display=swap"
           rel="stylesheet"
         ></link>
       </Head>
-      <body className="font-shipporiMincho">
+      <body className="font-shipporiAntique">
         <Main />
         <NextScript />
       </body>

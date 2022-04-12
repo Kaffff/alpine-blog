@@ -47,7 +47,7 @@ export const Tag: React.FC<{ name: string }> = ({ name }) => {
 const Article: NextPage<Content> = (content) => {
   const date = new Date(content.date);
   return (
-    <div className="flex flex-col h-full min-h-screen font-shippori">
+    <div className="flex flex-col h-full min-h-screen ">
       <meta name="description" content={content.title} />
       <Header />
       <Image

@@ -8,7 +8,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        shippori: ["ShipporiAntique"],
+        shipporiAntique: ["Shippori Antique"],
+        shipporiMincho: ["Shippori Mincho"],
+        newTegomin: ["New Tegomin"],
+        otomanopeeOne: ["Otomanopee One"],
       },
       skew: {
         60: "60deg",

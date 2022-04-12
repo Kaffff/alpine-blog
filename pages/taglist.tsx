@@ -15,7 +15,7 @@ const TagList: NextPage<{
   props.contents.map((content) => (tags = tags.concat(" ", content.tag)));
 
   return (
-    <div className="flex flex-col h-full min-h-screen font-shippori">
+    <div className="flex flex-col h-full min-h-screen ">
       <Header />
       <main className="grow place-self-center px-6 pt-14 pb-32 max-w-5xl">
         <div className="pb-12 text-3xl text-center  hover:cursor-default mobile:text-2xl">

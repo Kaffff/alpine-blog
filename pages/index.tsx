@@ -60,7 +60,7 @@ const Home: NextPage<HomeContentsResponce> = (props) => {
     title = "# " + q.join(" ");
   }
   return (
-    <div className="flex flex-col place-items-center h-full min-h-screen font-shippori">
+    <div className="flex flex-col place-items-center h-full min-h-screen">
       <Header />
       <main className="grow px-10 pt-10 pb-24 max-w-5xl  mobile:px-6">
         <div className="pb-2 ml-1 text-3xl  hover:cursor-default mobile:text-2xl">

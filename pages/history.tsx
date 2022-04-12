@@ -8,7 +8,7 @@ import { join } from "path";
 
 const History: NextPage<HomeContentsResponce> = (props) => {
   return (
-    <div className="flex flex-col h-full min-h-screen font-shippori">
+    <div className="flex flex-col h-full min-h-screen ">
       <Header />
       <main className="grow place-self-center px-10 pt-10 pb-32 max-w-7xl mobile:px-6">
         <div className="pb-2 ml-1 text-3xl  hover:cursor-default mobile:text-2xl">

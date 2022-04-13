@@ -13,7 +13,7 @@ export const ArticleCard: React.FC<{
   return (
     <Link href={join("/", id)} passHref>
       <div>
-        <div className=" flex flex-row w-full duration-300 hover:scale-105 hover:cursor-pointer">
+        <div className="flex flex-row w-full duration-300 hover:scale-105 hover:cursor-pointer">
           <div className="pr-2 w-2/5">
             <Image
               className="rounded"

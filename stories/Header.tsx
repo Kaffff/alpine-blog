@@ -11,7 +11,8 @@ export const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   return (
-    <header className="w-full ">
+    <div className="w-full ">
+      <title>botta ヤマレポ</title>
       <div className="flex justify-around py-8">
         <div className="w-7"></div>
         <Link href="/" passHref>
@@ -74,6 +75,6 @@ export const Header = () => {
           </li>
         </Link>
       </ul>
-    </header>
+    </div>
   );
 };

@@ -7,10 +7,9 @@ export const Footer = () => {
       <div className="flex gap-5 justify-center items-center">
         <Image
           className="rounded-full"
-          src="/test_mountain.jpeg"
+          src="/test_mountain.jpg"
           width="70"
           height="70"
-          objectFit="cover"
           alt="picture of mountain"
           priority={true}
         />
@@ -23,7 +22,7 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="text-zinc-400 text-center pt-10">botta alpinist blog</div>
+      <div className="pt-10 text-center text-zinc-400">botta alpinist blog</div>
     </footer>
   );
 };

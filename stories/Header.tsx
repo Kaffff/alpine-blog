@@ -12,7 +12,6 @@ export const Header = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   return (
     <div className="w-full ">
-      <title>botta ヤマレポ</title>
       <div className="flex justify-around py-8">
         <div className="w-7"></div>
         <Link href="/" passHref>

@@ -4,6 +4,7 @@ import { Footer } from "../stories/Footer";
 import { Header } from "../stories/Header";
 import { Tags } from "./[id]";
 import { client } from "./index";
+import Head from "next/head";
 
 const TagList: NextPage<{
   contents: Array<{ tag: string }>;
@@ -16,6 +17,9 @@ const TagList: NextPage<{
 
   return (
     <div className="flex flex-col h-full min-h-screen ">
+      <Head>
+        <title>botta ヤマレポ</title>
+      </Head>
       <Header />
       <main className="grow place-self-center px-6 pt-14 pb-32 max-w-5xl">
         <div className="pb-12 text-3xl text-center  hover:cursor-default mobile:text-2xl">

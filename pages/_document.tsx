@@ -1,8 +1,17 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import { DefaultSeo } from "next-seo";
 
 const Document = () => {
   return (
     <Html lang="ja">
+      <DefaultSeo
+        openGraph={{
+          type: "website",
+          locale: "ja_JP",
+          url: "https://alpine-blog.vercel.app/",
+          site_name: "botta ヤマレポ",
+        }}
+      />
       <Head>
         <meta name="description" content="botta's alpinist blog" />
         <meta name="description" content="bottaの登山ブログ" />

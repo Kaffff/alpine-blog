@@ -4,6 +4,7 @@ import { Header } from "../stories/Header";
 import { ArticleCard } from "../stories/ArticleCard";
 import { Footer } from "../stories/Footer";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 export type Content = {
   body: string;
@@ -61,6 +62,9 @@ const Home: NextPage<HomeContentsResponce> = (props) => {
   }
   return (
     <div className="flex flex-col place-items-center h-full min-h-screen">
+      <Head>
+        <title>botta ヤマレポ</title>
+      </Head>
       <Header />
       <main className="grow px-10 pt-10 pb-24 max-w-5xl  mobile:px-6">
         <div className="pb-2 ml-1 text-3xl  hover:cursor-default mobile:text-2xl">

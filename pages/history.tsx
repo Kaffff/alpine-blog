@@ -5,10 +5,14 @@ import { Footer } from "../stories/Footer";
 import { Header } from "../stories/Header";
 import Link from "next/link";
 import { join } from "path";
+import Head from "next/head";
 
 const History: NextPage<HomeContentsResponce> = (props) => {
   return (
     <div className="flex flex-col h-full min-h-screen ">
+      <Head>
+        <title>botta ヤマレポ</title>
+      </Head>
       <Header />
       <main className="grow place-self-center px-10 pt-10 pb-32 max-w-7xl mobile:px-6">
         <div className="pb-2 ml-1 text-3xl  hover:cursor-default mobile:text-2xl">

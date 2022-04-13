@@ -12,6 +12,7 @@ export const Footer = () => {
           height="70"
           objectFit="cover"
           alt="picture of mountain"
+          priority={true}
         />
         <div className="flex flex-col">
           <div className=" text-xl">botta</div>

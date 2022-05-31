@@ -16,26 +16,6 @@ https://alpine-blog.vercel.app/
 - tailwindcss
 - Storybook
 
-## Usage
-
-### Setup
-
-```
-$ npm install
-```
-
-### Build
-
-```
-$ npm run build
-```
-
-### Storybook
-
-```
-$ npm run storybook
-```
-
 ## Licence
 
 MIT

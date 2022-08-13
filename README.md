@@ -11,7 +11,7 @@ https://alpine-blog.vercel.app/
 ## Components
 
 - Next.js
-- microCMS (Contents)
+- microCMS (Headless CMS)
 - Vercel (Hosting)
 - tailwindcss
 - Storybook

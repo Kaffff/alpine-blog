@@ -20,5 +20,8 @@ module.exports = {
       tablet: { max: "900px" },
     },
   },
+  purge: {
+    content: ["./pages/**/*.{js,ts,jsx,tsx}", "./stories/**/*.{js,ts,jsx,tsx}"],
+  },
   plugins: [require("@tailwindcss/typography")],
 };

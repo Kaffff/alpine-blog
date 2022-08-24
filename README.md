@@ -2,7 +2,7 @@
 
 ## Description
 
-友人のために作成した登山ブログ
+友人のために作成した登山ブログ (製作途中)
 
 ## DEMO
 
@@ -15,26 +15,6 @@ https://alpine-blog.vercel.app/
 - Vercel (Hosting)
 - tailwindcss
 - Storybook
-
-## Usage
-
-### Setup
-
-```
-$ npm install
-```
-
-### Build
-
-```
-$ npm run build
-```
-
-### Storybook
-
-```
-$ npm run storybook
-```
 
 ## Licence
 
